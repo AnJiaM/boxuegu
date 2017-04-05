@@ -18,6 +18,7 @@ define([], function () {
             login:'js/home/login',
             repass:'js/home/repass',
             settings:'js/home/settings',
+            index:'index/home/srttings',
             teacherAdd:'hs/teacher/_add',
             teacherList:'js/teacher/teacher_list',
             userProfile:'js/user/user_profile',
@@ -44,6 +45,61 @@ define([], function () {
         }
     });
 
-
     //根据页面加载对应的js模块
+    var pathname=location.pathname;
+    swith(pathname){
+        case '/':
+            require(['index']);
+            break;
+        case '/html/home/login.html':
+            require(['login']);
+            break;
+        case '/html/home/repass.html':
+            require(['repass']);
+            break;
+        case '/html/home/settings.html':
+            require(['settings']);
+            break;
+        case '/html/advert/advert_add.html':
+            require(['advertAdd']);
+            break;
+        case '/html/advert/advert_list.html':
+            require(['advertList'])
+         case '/html/course/course_add_step1.html':
+  	  require(['courseAdd1']);
+  		break;
+  	case '/html/course/course_add_step2.html':
+  	  require(['courseAdd2']);
+  		break;
+  	case '/html/course/course_add_step3.html':
+  	  require(['courseAdd3']);
+  		break;
+  	case '/html/course/course_add.html':
+  	  require(['courseAdd']);
+  		break;
+  	case '/html/course/course_category_add.html':
+  	  require(['courseCategoryAdd']);
+  		break;
+  	case '/html/course/course_category.html':
+  	  require(['courseCategory']);
+  		break;
+  	case '/html/course/course_list.html':
+  	  require(['courseList']);
+  		break;
+  	case '/html/course/course_topic.html':
+  	  require(['courseTopic']);
+  		break;
+  	case '/html/teacher/teacher_add.html':
+  	  require(['teacherAdd']);
+  		break;
+  	case '/html/teacher/teacher_list.html':
+  	  require(['teacherList']);
+  		break;
+  	case '/html/user/user_profile.html':
+  	  require(['userProfile']);
+  		break;
+  	case '/html/user/user_list.html':
+  	  require(['userList']);
+  		break;
+    }
 });
